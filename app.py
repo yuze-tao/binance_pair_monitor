@@ -59,14 +59,13 @@ MODEL_REFRESH_BARS = 30
 REFRESH_MODEL_SECONDS = 30
 POLL_SECONDS = 1.0
 
-HOST = "127.0.0.1"
-PORT = 8000
+HOST = "0.0.0.0"
+PORT = int(os.environ.get("PORT", 8000))
 
 REST_URL = "https://fapi.binance.com/fapi/v1/klines"
 BOOK_URL = "https://fapi.binance.com/fapi/v1/ticker/bookTicker"
 
-PROXY = "http://127.0.0.1:7897"
-PROXIES = {"http": PROXY, "https": PROXY}
+PROXIES = None
 
 logging.basicConfig(
     level=logging.INFO,
